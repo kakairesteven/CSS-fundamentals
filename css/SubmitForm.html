@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="SubmitForm.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form>
+      <label for="trip">Tell us about your first trip to the zoo: </label>
+      <textarea id="trip" name="about-my-trip" rows="5"></textarea>
+      <button type="submit" id="submit-button">Save</button>
+    </form>
+
+    <script type="text/javascript">
+      var input = document.getElementById("trip");
+      var button = document.getElementById("submit-button");
+
+      button.addEventListener("click", function (event) {
+        // Prevents form submission
+        event.preventDefault();
+        // Displays loading spinner
+        button.classList.add("is-loading");
+        button.disabled = true;
+        input.disabled = true;
+
+        // Code here would submit form data using javaScript
+      });
+    </script>
+  </body>
+</html>

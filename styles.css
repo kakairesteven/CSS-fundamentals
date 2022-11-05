@@ -1,0 +1,122 @@
+/* Inheritance: Descendant elements inherit properties from
+ancestor elements.*/
+
+/*
+Media
+Displays an image on the left and body content
+on the right.
+Markup:
+<div class="media">
+<img class="media__image"
+src="http://placehold.it/150x150" />
+<div class="media__body">
+<h4>Strength</h4>
+<p>
+Strength training is an important part of
+injury prevention. Focus on your core&mdash;
+especially your abs and glutes.
+</p>
+</div>
+</div>
+Styleguide Media
+*/
+
+:root {
+  font-size: 0.875em;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* Tag (or type) selector */
+h1 {
+  /* font-family: serif; */
+  color: #2f4f4f;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#main-nav {
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+#main-nav li {
+  display: inline-block;
+}
+
+/* Specificity: #main-nav a is more specific. */
+/* Specificity order: IDs, Classes, Tags. Example: 0, 2, 4 */
+#main-nav a {
+  color: white;
+  background-color: #13a4a4;
+  /* !important makes the property-value pair not to be overriden. */
+  padding: 5px 15px; /*10px 15px 0 5px; */
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.featured {
+  background-color: orange !important;
+}
+
+.nav .featured {
+  box-shadow: 10px 2px #6f9090;
+}
+/* ID selector: Has a higher specificity than a class
+selector and a selector with many classes */
+#page-title {
+  font-family: sans-serif;
+}
+
+/* Class selector: Has a higher specificity than a tag selector */
+.title {
+  /* font-family: monospace; */
+  font: 60px Helvetica, Arial, sans-serif;
+}
+
+/* Shorthand equivalent to
+.title {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: normal;
+  font-size: 32px;
+  font-family: Helvetica, Arial, sans-serif;
+.
+*/
+
+/* links */
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: red;
+}
+
+.footer {
+  color: #666;
+  background-color: #ccc;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+  color: inherit; /* Inherits color from footer. */
+  /* color: initial; */ /*Resets color to default. */
+  text-decoration: underline;
+}

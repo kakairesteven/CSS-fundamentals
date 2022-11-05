@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="kakaire" />
+    <link rel="stylesheet" href="positioning.css" />
+  </head>
+
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what is going on at integral community. Sign up for monthly
+          newsletter:
+          <button id="open">Sign up</button>
+        </p>
+      </div>
+    </header>
+
+    <div class="modal" id="modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-body">
+        <button class="modal-close" id="close">Close</button>
+        <h2>integral Newsletter</h2>
+        <p>Sign up for monthly newsletter. No Spam. We promise!</p>
+        <form>
+          <p>
+            <label for="email">Email address:</label>
+            <input type="text" name="email" />
+          </p>
+          <p><button type="submit">Submit</button></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav>
+        <div class="dropdown">
+          <div class="dropdown-label">Main Menu</div>
+          <div class="dropdown-menu">
+            <ul class="submenu">
+              <li><a href="">Home</a></li>
+              <li><a href="/WorkingGroups">Working Groups</a></li>
+              <li><a href="/Resources">Resources</a></li>
+              <li><a href="/Policies">Policies</a></li>
+              <li><a href="/Life at integral">Life at integral</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1>integral</h1>
+    </div>
+
+    <script type="text/javascript">
+      var button = document.getElementById("open");
+      var close = document.getElementById("close");
+      var modal = document.getElementById("modal");
+      // Access modal element by id
+      // Change style of display to block from  none.
+
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.style.display = "block";
+      });
+
+      close.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

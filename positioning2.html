@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kakaire Steven" />
+
+    <link rel="stylesheet" href="positioning2.css" />
+  </head>
+
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          It will be different tomorrow! Find out what it is!
+          <button id="open">Sign Up</button>
+        </p>
+      </div>
+    </header>
+
+    <div class="modal" id="modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-body">
+        <button class="modal-close" id="close">Close</button>
+        <p>Sign Up for integral newsletter. No BS. We Promise!</p>
+        <form>
+          <p>
+            <label for="email" id="email">Email</label>
+            <input type="text" name="email" />
+          </p>
+
+          <p>
+            <button type="submit" id="signup-button">Sign Up</button>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <h1><i>integral</i></h1>
+
+    <script type="text/javascript">
+      var button = document.getElementById("open");
+      var close = document.getElementById("close");
+      var modal = document.getElementById("modal");
+
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.style.display = "block";
+      });
+
+      close.addEventListener("click", function (event) {
+        event.preventDefault();
+        modal.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+/* Transition
+1. transition-property 
+2. transition-duration
+3. transition-timing-function
+4. transition-delay
+*/
+/* button {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(220deg 83% 47%);
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  border: 0;
+  transition: all 0.5s linear;
+}
+
+/* button:hover {
+  background-color: hsla(120, 100%, 25%, 1);
+  padding: 0.8em 1.4em;
+  font-size: 1.2em;
+} */
+
+.container {
+  position: relative;
+  height: 2em;
+}
+
+.box {
+  position: absolute;
+  left: 0;
+  background-color: hsla(116, 90%, 47%, 1);
+  height: 2em;
+  width: 2em;
+  transition: all 1s linear;
+}
+
+.container:hover .box {
+  left: 400px;
+  background-color: hsla(120, 50%, 47%, 1);
+}
+*/ body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.dropdown__toggle {
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px solid hsl(280, 10%, 80%);
+  color: hsl(280, 30%, 60%);
+  background-color: white;
+  font: inherit;
+  text-decoration: none;
+  transition: background-color 0.2s linear;
+}
+.dropdown__toggle:hover {
+  background-color: hsl(280, 15%, 95%);
+}
+
+.dropdown__drawer {
+  position: absolute;
+  /* display: none; */
+  /* visibility: hidden; */
+  background-color: white;
+  width: 8em;
+  height: 0;
+  overflow: hidden;
+  /* opacity: 1; */
+  /* transition: opacity .5s linear, visibility 1s linear; */
+  transition: height .3s ease-out;
+}
+
+.dropdown.is-open .dropdown__drawer {
+  /* display: block; */
+  /* opacity: 1; */
+  /* visibility: visible; */
+  /* transition-delay: 0s; */
+  height: auto
+}
+
+.menu {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu > li + li > a {
+  border-top: 0;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 0.5em 1em;
+  color: hsl(280, 40%, 60%);
+  background-color: white;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  border: 1px solid hsl(280, 10%, 80%);
+}
+.menu > li > a:hover {
+  background-color: hsl(280, 15%, 95%);
+  color: hsl(280, 25%, 10%);
+}

@@ -1,0 +1,79 @@
+.shake {
+  animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-0.4em);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(0.4em);
+  }
+  80% {
+    transform: translateX(0.3em);
+  }
+  90% {
+    transform: translate(-0.3em);
+  }
+}
+
+/* 
+.shake {
+    animation: shake .5s linear;
+ }
+
+ @keyframes shake {
+     0%, 100% {
+         transform: translate(0);
+     }
+     
+     10%, 30%, 50%, 70% {
+         transform: translate(-0.4em);
+     }
+     
+     20%, 40%, 60% {
+         transform: translate(0.4em);
+     }
+
+     80% {
+         transform: translate(-0.3em);
+     }
+     
+     90% {
+         transform: translate(0.3em);
+     }
+    
+    
+<script type="text/javascript">
+    var button = document.getElementByID('button');
+    var input = document.getElementByID('trip');
+    var timeout = null;
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        button.disabled = true;
+        input.disabled = true;
+    });
+
+    input.addEventListener('keyup', function () {
+        clearTimeout(timeout);
+        timeout = SetTimeout(function () {
+            button.classList.add('shake');
+            }, 1000);
+    });
+
+    button.addEventListener('animationend', function () {
+        button.classList.remove('shake');
+    });
+</script> 
+    
+*/

@@ -1,0 +1,77 @@
+:root {
+  box-sizing: border-box;
+  font-family: akshar;
+  /* font-size: 1.2em; */
+}
+
+*, ::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+  background-color: #eee;
+  border-radius: 1.5em;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+body * + * {
+  margin-top: 1.5em;
+}
+
+header {
+  background-color: #0090c9;
+  color: #fff;
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  /* text-align: center; */
+  text-transform: uppercase;
+}
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: " ";
+}
+
+.main {
+  background-color: #fff;
+  border-radius: .5em;
+  padding: 0 1.5em;
+}
+
+.media {
+  float: left;
+  border-radius: .5em;
+  background-color: #eee;
+  width: calc(50% - 1.5em);
+  padding: 1.5em;
+  margin: 0 1.5em 1.5em 0;
+  /* margin-right: 1.5em; */
+}
+
+.media:nth-child(odd) {
+  clear: left;
+}
+
+.media-image {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.media-body {
+  margin-top: 0;
+  overflow: auto;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.media-body h4 {
+    margin-top: 0;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kakaire Steven" />
+    <meta name="view-port" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="transitions.css" />
+  </head>
+
+  <body>
+    <button>Hover over me</button>
+
+    <div class="container">
+          <div class="box"></div>
+      </div>
+
+    <!-- <div class="dropdown" aria-haspopup="true">
+      <button class="dropdown__toggle">Menu</button>
+      <div class="dropdown__drawer">
+        <ul class="menu" role="menu">
+          <li role="menuitem">
+            <a href="/features">Features</a>
+          </li>
+          <li role="menuitem">
+            <a href="/pricing">Pricing</a>
+          </li>
+          <li role="menuitem">
+            <a href="/support">Support</a>
+          </li>
+          <li role="menuitem">
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p><a href="/read-more">Read more</a></p> -->
+
+    <!-- <script type="text/javascript">
+      (function () {
+        var toggle = document.getElementsByClassName("dropdown__toggle")[0];
+        var dropdown = toggle.parentElement;
+        toggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          dropdown.classList.toggle("is-open");
+        });
+      }());
+    </script> -->
+
+    <script type="text/javascript">
+      (function () {
+        var toggle = document.getElementsByClassName('dropdown__toggle')[0];
+        var dropdown = toggle.parentElement;
+        var drawer = document.getElementsByClassName('dropdown__drawer')[0];
+        var height = drawer.scrollHeight;
+
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          dropdown.classList.toggle('is-open');
+          if (dropdown.classList.contains('is-open')) {
+            drawer.style.setProperty('height', height + 'px');
+          } else {
+            drawer.style.setProperty('height', '0');
+          }
+        });
+      }());
+
+    </script>
+  </body>
+</html>

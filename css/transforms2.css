@@ -1,0 +1,233 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  /* Background-color provides a fall back for opera mini
+  which doesn't support radial gradients */
+  background-color: hsl(200, 80%, 30%);
+  /* Deep blue background gradient */
+  background-image: radial-gradient((200, 80%, 30%), hsl(210, 80%, 20%));
+  color: white;
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  /* Ensures that the body fills the viewport so the 
+  gradient fills the screen */
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Alfa Slab One, serif;
+  font-weight: 400;
+}
+
+main {
+  display: block;
+}
+
+.page-header {
+  margin: 0;
+  /* Smaller padding for the header on mobile viewports */
+  padding: 1rem;
+}
+
+.nav-links {
+  /* Uses a flexbox to spread the nav items across the screen
+  horizontally */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  list-style: none;
+}
+.nav-links > li + li {
+  margin-left: 0.8em;
+}
+.nav-links > li > a {
+  display: block;
+  padding: 0.8em 0;
+  color: white;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 0.06em;
+}
+.nav-links__icon {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: -0.2em;
+}
+.nav-links > li > a:hover {
+  color: hsl(40, 100%, 70%);
+}
+/* Overrides the flexbox from mobile styles to make links
+stack vertically */
+
+/* Applies styles only to medium and large screens */
+@media (min-width: 30em) {
+  /* Larger padding for the header on large screens */
+  .page-header {
+    padding: 2rem 2rem 3rem;
+  }
+  .main-nav {
+    position: fixed;
+    top: 8.25rem;
+    left: 0;
+    /* Ensures the nav shows infront of other content added to the
+    page later */
+    z-index: 10;
+    /* Initially leaves the background-color transparent */
+    background-color: transparent;
+    /* Adds a transition effect to the background */
+    transition: background-color 0.5s linear;
+    border-top-right-radius: 0.5em;
+  }
+  .main-nav:hover {
+    /* Applies a dark semi-transparent background on hover */
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .nav-links {
+    display: block;
+    padding: 1em;
+    margin-bottom: 0;
+  }
+  .nav-links > li + li {
+    margin-left: 0;
+  }
+  .nav-links__label {
+    /* Makes tha label an inline-block
+      so transforms can be applied to it */
+    display: inline-block;
+    margin-left: 1em;
+    padding-right: 1em;
+    /* Hides the label initially */
+    opacity: 0;
+    transform: translate(-1em);
+    /* Adds transitions to the values that will change */
+    /* The custom cubic-bezier() function produces a bouncing
+    effect: the label moves right beyond the ending location before
+    settling back where it stops. */
+    transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.8),
+      opacity 0.4s linear;
+  }
+  /* On hover or focus, makes the label visible and shifts it
+  back to its correct position */
+  .nav-links:hover .nav-links__label,
+  .nav-links a:focus > .nav-links__label {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .nav-links > li:nth-child(2) .nav-links__label {
+    transition-delay: 0.1s;
+  }
+  .nav-links > li:nth-child(3) .nav-links__label {
+    transition-delay: 0.2s;
+  }
+  .nav-links > li:nth-child(4) .nav-links__label {
+    transition-delay: 0.3s;
+  }
+  .nav-links > li:nth-child(5) .nav-links__label {
+    transition-delay: 0.4s;
+  }
+  .nav-links__icon {
+    transition: transform 0.2s ease-out;
+  }
+  .nav-links a:hover > .nav-links__icon,
+  .nav-links a:focus > .nav-links__icon {
+    transform: scale(1.3);
+  }
+  .flyin-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5rem;
+  }
+
+  .flyin-grid__item {
+    flex: 1 1 300px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    max-width: 600px;
+  }
+
+  /* Queries for grid support within 
+  media query block */
+  @supports (display: grid) {
+    .flyin-grid {
+      display: grid;
+      /* Defines column widths */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 2em;
+    }
+
+    .flyin-grid__item {
+      max-width: initial;
+      /* Removes margins applied by the fallback layout */
+      margin: 0;
+    }
+  }
+}
+
+.flyin-grid {
+  margin: 0 1rem;
+}
+
+.card {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background-color: white;
+  color: hsl(210, 135%, 20%);
+  box-shadow: 0.2em 0.5em 1em rgba(0, 0, 0, 0.3);
+}
+
+.card > img {
+  width: 100%;
+}
+
+.flyin-grid {
+  margin: 0 1rem;
+  perspective: 500px;
+}
+
+.flyin-grid__item {
+  animation: fly-in 600ms ease-in;
+  animation-fill-mode: backwards;
+}
+
+.flyin-grid__item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.flyin-grid__item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.flyin-grid__item:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.flyin-grid__item:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translate(-800px) rotateY(90deg);
+    opacity: 0;
+  }
+  56% {
+    transform: translateZ(-160px) rotateY(65deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(0) rotateY(0);
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        font-size: calc(0.5em + 1vw);
+        --main-font: Helvetica, Arial, sans-serif;
+        --brand-color: #369;
+        --main-bg: #fff;
+        --main-color: #000;
+      }
+
+      body {
+        font-size: initial;
+        line-height: 1.2;
+      }
+
+      .about-us {
+        font-size: 2em;
+      }
+
+      .box {
+        padding: 1em;
+        border-radius: 1em;
+        background-color: lightgray;
+        margin-top: 2em;
+      }
+
+      .box-small {
+        font-size: 12px;
+      }
+
+      .box-large {
+        font-size: 18px;
+      }
+
+      .community {
+        font-size: 1.2em; /*1.2 x 16px*/
+        padding: 1.2em; /* 23.04px*/
+        background-color: #ccc;
+      }
+
+      ul {
+        font-size: 0.8rem;
+      }
+
+      /* ul ul {
+        font-size: 1em;
+      } */
+
+      /* 
+      When in doubt, use rems for font size, pixels for borders
+      , ems for most other properties.
+      */
+      .dark {
+        margin-top: 2em;
+        padding: 1em;
+        background-color: #999;
+        --main-bg: #333; /*Redefines the background color*/
+        --main-color: #fff; /*Redfines the main color for */
+      }
+
+      .panel {
+        font-size: 1rem;
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 1px solid #999;
+        background-color: var(--main-bg);
+        color: var(--main-color);
+      }
+
+      .panel > h2 {
+        margin-top: 0;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .panel .large {
+        font-size: 1.2rem;
+      }
+
+      .square {
+        margin-top: 5vh;
+        width: 90vmin;
+        height: 90vmin;
+        background-color: #369;
+      }
+
+      /* :root {
+        font-size: .875em;
+      }
+
+      @media (min-width : 800px) {
+        :root {
+          font-size: .875em;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        :root {
+          font-size: 2em;
+        }
+      } */
+       
+
+      p {
+        font-family: var(--main-font);
+        color: var(--brand-color);
+        /* color: var(--secondary-color, blue); */
+        /* The second paramter is a fallback value */
+      }
+    </style>
+  </head>
+  <script type="text/javascript">
+    var rootElement = document.documentElement;
+    var styles = getComputedStyle(rootElement);
+    var mainColor = styles.getPropertyValue('--main-bg');
+    console.log(String(mainColor).trim());
+
+    rootElement.style.setProperty('--main-bg', '#cdf')
+  </script>
+
+  <body>
+    <span class="box box-small">Small</span>
+    <span class="box box-large">Large</span>
+
+    <p class="community">
+      integral community, connects, inspires and enables next solution creators.
+    </p>
+
+    <ul>
+      <li>
+        Top level
+        <ul>
+          <li>
+            Second level
+            <ul>
+              <li>
+                Third level
+                <ul>
+                  <li>
+                    Fourth level
+                    <ul>
+                      <li>Fifth level</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="panel large">
+      <h2>Single-origin</h2>
+      <div class="panel-body">
+        We have built partnerships with small farms around the world to
+        hand-select beans at the peak of season. We then carefully roast in
+        <a href="/batch=size">small batches </a> to maximize their potential.
+      </div>
+    </div>
+
+    <aside class="dark">
+      <div class="panel">
+        <h2>Single-origin</h2>
+        <div class="body">
+          We have built partnerships with small farms around the world to
+          hand-select beans at the peak of season. We then carefully roast in
+          <a href="/batch=size">small batches </a> to maximize their potential.
+        </div>
+      </div>
+    </aside>
+
+    <div class="square"></div>
+
+    <p class="about-us">
+      We have built partnerships with small farms around the world to
+      hand-select beans at the peak of the season. We carefully roast in small
+      batches to maximize their potential.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+:root {
+  box-sizing: border-box;
+  font-size: 1em;
+  --black: hsla(0deg, 0%, 0%, 0.8);
+  --white: hsl(0deg, 0%, 99%, 1);
+  --blue: hsla(199deg, 98%, 48%, 1);
+  --medium-blue: hsl(199deg 98% 48%);
+  --green: hsla(121deg, 96%, 49%, 1);
+  --gray: hsla(0deg, 0%, 50%, 0.99);
+  --light-gray: hsla(0deg, 0%, 50%, 0.05);
+  --light-gray-deg2: hsla(0deg, 5%, 90%, 1);
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: akshar, Arial, san-serif;
+  background-color: var(--light-gray);
+}
+
+.container {
+  display: flex;
+  height: 60vh;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.container:hover {
+  transition: opacity .2s linear, visibility 2s linear .2s;
+}
+
+.tile {
+  background-color: var(--white);
+  flex: 1;
+  border-radius: 0.5rem;
+  padding: 1.5em 1.5em;
+}
+
+.tile:hover {
+  /* box-shadow: .5em .5em 0.175em var(--light-gray-deg2); */
+  transform: scale(.98)
+}
+
+.container * + * {
+  margin-left: 1.5rem;
+}
+
+.tile h4 {
+    font-family: Roboto, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+

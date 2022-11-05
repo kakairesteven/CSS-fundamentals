@@ -1,0 +1,294 @@
+:root {
+  box-sizing: border-box;
+  /* Base font size scales slightly with the viewport.*/
+  font-size: calc(1vw + 0.6em);
+}
+
+@media (min-width: 50em) {
+  :root {
+    font-size: 1.125em;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Akshar, Arial, sans-serif;
+}
+
+a:link {
+  color: #1476b8;
+  font-weight: bold;
+  text-decorations: none;
+}
+
+a:visited {
+  color: #1430b8;
+}
+
+a:hover {
+  text-decorations: underline;
+}
+
+a:active {
+  color: #b81414;
+}
+
+.page-header {
+  padding: 0.4em 1em;
+  background-color: #fff;
+}
+
+@media (min-width: 35em) {
+  .page-header {
+    padding: 1em;
+  }
+}
+
+@media (min-width: 50em) {
+  .page-header {
+    padding: 1em 4em;
+  }
+}
+
+.slogan {
+  color: #888;
+  font-size: 0.875em;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.title > h1 {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 0.2em 0;
+}
+
+@media (min-width: 35em) {
+  .title > h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.hero {
+  padding: 2em 1em;
+  text-align: center;
+
+  /* Adds the hero image to the page */
+  background-image: url(coffee-beans-small.jpg);
+
+  /* Background-size is the size of the background-image,
+  if less than 100%, it shall be multiple images tiled to
+  fill-up the container.  */
+  background-size: 100%;
+  color: #fff;
+
+  /* A dark text shadow helps light text remain readable
+    in front of complex background. */
+  /* x, y, blur, color */
+  text-shadow: 0.1em 0.1em 0.3em #000;
+}
+
+@media (min-width: 35em) {
+  .hero {
+    /* Increases hero image padding and font size */
+    padding: 5em 3em;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 35em) {
+  .hero {
+    padding: 5em 3em;
+    font-size: 1.2rem;
+    background-image: url(coffee-beans-medium.jpg);
+  }
+}
+
+@media (min-width: 50em) {
+  .hero {
+    padding: 7em 6em;
+    background-image: url(coffee-beans.jpg);
+  }
+}
+
+@medai (min-width: 35em) {
+  .hero {
+    padding: 7em 6em;
+    background-image: url(coffee-beans-small.jpg);
+  }
+}
+
+@media (min-width: 50em) {
+  .hero {
+    padding: 2em 4em;
+  }
+}
+
+main {
+  padding: 1em;
+}
+
+@media (min-width: 35em) {
+  main {
+    padding: 2em 1em;
+  }
+}
+
+.subtitle {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.menu {
+  position: relative;
+  /* Establishes containing block for both
+    absolutely positioned children; */
+}
+
+.menu-toggle {
+  position: absolute;
+  /* Negative top pull the button outside its containing block */
+  top: -1.2em;
+  right: 0.1em;
+
+  /* Overrides user agent button styles */
+  border: 0;
+  background-color: transparent;
+
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  line-height: 0.4;
+  text-indent: 5em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu-toggle::after {
+  position: absolute;
+  top: 0.2em;
+  /* left: 0.2em; */
+  display: block;
+
+  /* Overlays the button with a unicode symbol, the hamburger icon. */
+  content: "\2261";
+  text-indent: 0;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+
+.menu.is-open .menu-dropdown {
+  /* Displays the dropdown menu when the class
+    is-open is added to the menu */
+  display: block;
+}
+
+.nav-menu {
+  margin: 0;
+  padding-left: 0;
+  border: 1px solid #ccc;
+  list-style: none;
+  background-color: #000;
+  color: #fff;
+}
+
+.nav-menu > li + li {
+  /* Applies a border between each menu item */
+  border-top: 1px solid #ccc;
+}
+
+
+
+.nav-menu > li > a {
+  display: block;
+  /* Uses a healthy amount of padding to ensure a large clickable area */
+  padding: 0.8em 1em;
+  color: #fff;
+  font-weight: normal;
+}
+
+/* print styles */
+@media print {
+  * {
+    color: black !important;
+    /* background: none !important; */
+  }
+}
+
+@media (min-width: 35em) {
+  /* Hides toggle button and reveals the dropdown content */
+  .menu-toggle {
+    display: none;
+  }
+  
+  .menu-dropdown {
+    display: block;
+    /* Overrides absolute positioning */
+    position: static;
+  }
+}
+
+@media (min-width: 35em) {
+  .nav-menu {
+    display: flex;
+    border: 0;
+    padding: 0 1em;
+    background-color: rgba(0, 0, 0, 0.0175);
+  }
+
+  .nav-menu > li {
+    flex: 1;
+  }
+
+  .nav-menu > li + li {
+    border: 0;
+  }
+
+  .nav-menu > li > a {
+    padding: 0.3em;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@media (min-width: 50em) {
+  .nav-menu {
+    padding: 0 4em;
+  }
+} 
+
+@media (min-width: 35em) {
+  .row {
+    display: flex;
+    /* Uses negative margins to widen the row container to comensate for column
+        margins */
+    margin-left: -0.75em;
+    margin-right: -0.75em;
+  }
+
+  .column {
+    flex: 1;
+    /* Adds column gutter */
+    margin-right: 0.75em;
+    margin-left: 0.75em;
+  }
+}

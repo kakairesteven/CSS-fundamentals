@@ -1,0 +1,95 @@
+:root {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: akshar;
+    font-size: 1em;
+    background-color: #eee;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+*, ::before,
+::after {
+    box-sizing: inherit;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #0072b0;
+    color: #fff;
+    border-radius: .5em;
+    margin-bottom: 1.5em;
+    padding: 1em 1.5em;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    /* text-align: center; */
+}
+
+[class*="column-"] {
+    float: left;
+    margin-top: 0;
+    padding: 0 0.75em;
+    /* margin: 1.5em; */
+}
+
+main {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: .5em;
+
+}
+
+.column-6 {
+    width: 50%;
+}
+
+.row {
+    margin-left: -0.75em;
+    margin-right: -0.75em;
+}
+
+.row::after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+main h2 {
+    /* text-align: center; */
+    text-transform: capitalize;
+    margin-top: 0;
+}
+
+.media-image {
+    float: left;
+    margin-right: 1.5em;
+}
+
+.media-body {
+    /* float: left; */
+    margin-top: 0;
+    overflow: auto;
+}
+
+.media-body h4 {
+    text-transform: capitalize;
+}
+
+.media {
+    background-color: #eee;
+    padding: 1.5em;
+    border-radius: .5em;
+}
+
+.book-intro {
+    font-weight: lighter;
+    text-transform: capitalize;
+}

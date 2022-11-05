@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kakaire Steven" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="integral.css" />
+  </head>
+
+  <body>
+    <header id="header " class="page-header">
+      <div class="title">
+        <h1>integral</h1>
+        <div class="slogan">dx</div>
+      </div>
+    </header>
+
+    <nav class="menu" id="main-menu">
+      <button class="menu-toggle" id="toggle-menu">toggle menu</button>
+
+      <div class="menu-dropdown">
+        <ul class="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us.html">About us</a></li>
+            <li><a href="/events.html">Events</a></li>
+            <li><a href="/shop.html">Shop</a></li>
+            <li><a href="/contact-us.html">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <aside id="hero" class="hero">
+      Welcome to integral. We are a community of everyday ordinary engineers and
+      designers with simple ideas to tip impactful changes in lives of people.
+      We are integral.
+    </aside>
+
+    <main id="main">
+      <div class="row">
+        <!-- <section class="column">
+          <h2 class="subtitle">Our history</h2>
+          <p>
+            Started in 2022, with an idea to connect, inspire and enable
+            graduate students to have impactful value in society.
+          </p>
+        </section> -->
+
+        <section class="column">
+          <h2 class="subtitle">Who we are</h2>
+          <p>
+            A community of engineers (electrical and electronics) developing
+            solutions to society problems.
+          </p>
+        </section>
+
+        <section class="column">
+          <h2 class="subtitle">What we believe.</h2>
+
+          <p>
+            We believe there is infinite potential within every individual.
+            Connected, enabled and inspired individuals can do amazing things.
+          </p>
+        </section>
+
+        <section class="column">
+          <h2 class="subtitle">What we do</h2>
+          <p>
+            We connect, enable and inspire individuals that apply electrical and
+            electronics engineering to solve problems.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      (function () {
+        var button = document.getElementById("toggle-menu");
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          var menu = document.getElementById("main-menu");
+          menu.classList.toggle("is-open");
+        });
+      })();
+    </script>
+  </body>
+</html>
